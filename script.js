@@ -6,5 +6,17 @@
 // Paper & Paper = Draw
 // Scissors & Scissors = Draw
 
+//Step 1: Get player name and assign it to a variable
+var playerName = prompt("What is your name? ");
 
+// Step 2: Create an array of characters for computer to select from and assign it to a variable
+var compSelection = ["R", "P", "S"];
 
+//Step 3: Use Math.random() function to get the computer to choose a random character between R, P, S and assign it to a variable
+
+//Gets a random number between 0 to 2 and multiply it by the array length
+var random = Math.floor (Math.random() * compSelection.length) //This returns a random integer between 0 and 2 (both included)
+
+//Step 4: Prompt player to enter a character between R, P and S
+var playerSelection = prompt("Enter a character between R, P and S");
+console.log("You selected: " + playerSelection + " and Computer selected : " + compSelection);
