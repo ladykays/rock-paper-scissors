@@ -22,17 +22,23 @@ var playerSelection = prompt("Enter a character between R, P and S");
 console.log("You selected: " + playerSelection + " and Computer selected : " + compSelection[random]);
 
 //Step 5: Compare character chosen by computer with that chosen by player to determine who won or if the game is a draw
-if (compSelection[0] && playerSelection === "S") {
-  alert ("Computer Won");
-} else if (compSelection[0] && playerSelection === "P") {
+if (compSelection[random] === "R" && playerSelection === "S") {
+  alert ("Computer Won!");
+} else if (playerSelection === "R" && compSelection[random] === "S") {
+  alert ("Congratulations " + playerName + " you won!");
+} else if (compSelection[random] === "R" && playerSelection === "P") {
   alert("Congratulations " + playerName + " you won!");
-} else if (compSelection[1] && playerSelection === "S") {
+} else if (playerSelection === "R" && compSelection[random] === "P") {
+  alert ("Computer Won!");
+} else if (compSelection[random] === "P" && playerSelection === "S") {
   alert("Congratulations " + playerName + " you won!");
-} else if (compSelection[0] && playerSelection === "R") {
+} else if (playerSelection === "P" && compSelection[random] === "S") {
+  alert ("Computer Won!");
+} else if (compSelection[random] === "R" && playerSelection === "R") {
   alert("It's a draw!");
-} else if (compSelection[1] && playerSelection === "P") {
+} else if (compSelection[random] === "P" && playerSelection === "P") {
   alert("It's a draw!");
-} else if (compSelection[2] && playerSelection === "s") {
+} else if (compSelection[random] === "S" && playerSelection === "S") {
   alert("It's a draw!");
 } else {
   alert ("Invalid entry!");
