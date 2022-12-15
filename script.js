@@ -19,7 +19,7 @@ var random = Math.floor (Math.random() * compSelection.length) //This returns a 
 
 //Step 4: Prompt player to enter a character between R, P and S
 var playerSelection = prompt("Enter a character between R, P and S");
-console.log("You selected: " + playerSelection + " and Computer selected : " + compSelection);
+console.log("You selected: " + playerSelection + " and Computer selected : " + compSelection[random]);
 
 //Step 5: Compare character chosen by computer with that chosen by player to determine who won or if the game is a draw
 if (compSelection[0] && playerSelection === "S") {
