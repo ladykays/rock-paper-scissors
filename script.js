@@ -91,23 +91,13 @@ function replay () {
 replay ();
 
 //Confirm if player wants to play again
-
-
-//var playAgain = confirm ("Would you like to play again?");
-  //for (var i = 0; i < 10; i++){
-    var playAgain = confirm ("Would you like to play again?");
-    if (playAgain === true) {
-      for (var i = 0; i < 10; i++){
-        replay();
-      }
-      alert ("Well done " + playerName + " for completing the game!\nYour score is:\nWins: " + win + "\nLoss: " + loss + "\nTies: " + tie);
-    } else {
-      alert ("You cancelled! Your score is:\nWins: " + win + "\nLoss: " + loss + "\nTies: " + tie);
+  var playAgain = confirm ("Would you like to play again?");
+  if (playAgain === true) {
+    for (var i = 0; i < 10; i++){
+      replay();
     }
-    //alert ("Well done " + playerName + " for completing the game!\nYour score is:\nWins: " + win + "\nLoss: " + loss + "\nTies: " + tie);
-  //}
-  
- //alert ("Well done " + playerName + " for completing the game!\nYour score is:\nWins: " + win + "\nLoss: " + loss + "\nTies: " + tie);
-
-//The replay code needs a bug fix. When the cancel option is picked, It keeps bringing up the alert "You cancelled, your score is..." until the loop is done
-
+    alert ("Well done " + playerName + " for completing the game!\nYour score is:\nWins: " + win + "\nLoss: " + loss + "\nTies: " + tie);
+  } else {
+    alert ("You cancelled! Your score is:\nWins: " + win + "\nLoss: " + loss + "\nTies: " + tie);
+  }
+   
