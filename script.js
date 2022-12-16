@@ -94,10 +94,9 @@ replay ();
 var playAgain = confirm ("Would you like to play again?");
 
 //Confirm if user wants to play again
-for (var i = 0; i < 3; i++){
+for (var i = 0; i < 10; i++){
   if (playAgain === true) {
     replay();
-    playAgain = confirm ("Would you like to play again?");
   } else {
     alert ("You cancelled!");
   }
