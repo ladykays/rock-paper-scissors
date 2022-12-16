@@ -56,57 +56,50 @@ function replay () {
   // Compare character chosen by computer with that chosen by player to determine who won or if the game is a tie
 
     if (compSelection[random] === "R" && playerSelection === "S") {
-    alert ("Computer Won!\nYou selected: " + playerSelection + " and Computer selected: " + compSelection[random]);
+      loss++;
+      alert ("Computer Won!\nYou selected: " + playerSelection + " and Computer selected: " + compSelection[random]);
     } else if (playerSelection === "R" && compSelection[random] === "S") {
-    alert ("Congratulations " + playerName + " you won!\nYou selected: " + playerSelection + " and Computer selected: " + compSelection[random]);
+      win++;
+      alert ("Congratulations " + playerName + " you won!\nYou selected: " + playerSelection + " and Computer selected: " + compSelection[random]);
     } else if (compSelection[random] === "R" && playerSelection === "P") {
-    alert("Congratulations " + playerName + " you won!\nYou selected: " + playerSelection + " and Computer selected: " + compSelection[random]);
+      win++;
+      alert("Congratulations " + playerName + " you won!\nYou selected: " + playerSelection + " and Computer selected: " + compSelection[random]);
     } else if (playerSelection === "R" && compSelection[random] === "P") {
-    alert ("Computer Won!\nYou selected: " + playerSelection + " and Computer selected: " + compSelection[random]);
+      loss++;
+      alert ("Computer Won!\nYou selected: " + playerSelection + " and Computer selected: " + compSelection[random]);
     } else if (compSelection[random] === "P" && playerSelection === "S") {
-    alert("Congratulations " + playerName + " you won!\nYou selected: " + playerSelection + " and Computer selected: " + compSelection[random]);
+      win++;
+      alert("Congratulations " + playerName + " you won!\nYou selected: " + playerSelection + " and Computer selected: " + compSelection[random]);
     } else if (playerSelection === "P" && compSelection[random] === "S") {
-    alert ("Computer Won!\nYou selected: " + playerSelection + " and Computer selected: " + compSelection[random]);
+      loss++;
+      alert ("Computer Won!\nYou selected: " + playerSelection + " and Computer selected: " + compSelection[random]);
     } else if (compSelection[random] === "R" && playerSelection === "R") {
-    alert("It's a draw!\nYou selected: " + playerSelection + " and Computer selected: " + compSelection[random]);
+      tie++;
+      alert("It's a draw!\nYou selected: " + playerSelection + " and Computer selected: " + compSelection[random]);
     } else if (compSelection[random] === "P" && playerSelection === "P") {
-    alert("It's a draw!\nYou selected: " + playerSelection + " and Computer selected: " + compSelection[random]);
+      tie++;
+      alert("It's a draw!\nYou selected: " + playerSelection + " and Computer selected: " + compSelection[random]);
     } else if (compSelection[random] === "S" && playerSelection === "S") {
-    alert("It's a draw!\nYou selected: " + playerSelection + " and Computer selected: " + compSelection[random]);
+      tie++;
+      alert("It's a draw!\nYou selected: " + playerSelection + " and Computer selected: " + compSelection[random]);
     } else {
-    alert ("Invalid entry!\nYou selected: " + playerSelection + " and Computer selected: " + compSelection[random]);
+      alert ("Invalid entry!");
     }
 }
 
+// Run the game for the first time
+replay ();
 
-  // confirm ("Would you like to play again?");
-  // if (confirm == true) {
-  //   for (i = 0; i < 2; i++) {
-  //   random = Math.floor (Math.random() * compSelection.length)
-  //   playerSelection = prompt("Enter a character between R, P and S");
-  //   console.log("You selected: " + playerSelection + " and Computer selected : " + compSelection[random]);
-  //   if (compSelection[random] === "R" && playerSelection === "S") {
-  //     alert ("Computer Won!");
-  //     } else if (playerSelection === "R" && compSelection[random] === "S") {
-  //     alert ("Congratulations " + playerName + " you won!");
-  //     } else if (compSelection[random] === "R" && playerSelection === "P") {
-  //     alert("Congratulations " + playerName + " you won!");
-  //     } else if (playerSelection === "R" && compSelection[random] === "P") {
-  //     alert ("Computer Won!");
-  //     } else if (compSelection[random] === "P" && playerSelection === "S") {
-  //     alert("Congratulations " + playerName + " you won!");
-  //     } else if (playerSelection === "P" && compSelection[random] === "S") {
-  //     alert ("Computer Won!");
-  //     } else if (compSelection[random] === "R" && playerSelection === "R") {
-  //     alert("It's a draw!");
-  //     } else if (compSelection[random] === "P" && playerSelection === "P") {
-  //     alert("It's a draw!");
-  //     } else if (compSelection[random] === "S" && playerSelection === "S") {
-  //     alert("It's a draw!");
-  //     } else {
-  //     alert ("Invalid entry!");
-  //     }
-  //   }
-  // } else {
-  //   console.log("You Cancelled !");
-  // }
+//Confirm if player wants to play again
+var playAgain = confirm ("Would you like to play again?");
+
+//Confirm if user wants to play again
+for (var i = 0; i < 3; i++){
+  if (playAgain === true) {
+    replay();
+    playAgain = confirm ("Would you like to play again?");
+  } else {
+    alert ("You cancelled!");
+  }
+}
+alert ("Well done " + playerName + " for completing the game!\nYour score is:\nWins: " + win + "\nLoss: " + loss + "\nTies: " + tie);
